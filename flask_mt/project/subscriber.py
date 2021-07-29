@@ -21,9 +21,7 @@ def main():
             lst.append(struct.unpack(">I", body)[0])
             labels.pop(0)
             labels.append(str(label))
-            print(lst)
             json.dump(data, f)
-            print(data)
 
     channel.basic_consume(queue='hello', on_message_callback=callback, auto_ack=True)
 
